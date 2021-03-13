@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/starbucks.svg"
+      type="image/x-icon"
+    />
+    <title>Starbucks</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <link rel="stylesheet" href="./assets/styles/responsive.css" />
+  </head>
+  <body>
+    <section>
+      <div class="circle"></div>
+      <header>
+        <a href="#"
+          ><img
+            src="./assets/images/starbucks.svg"
+            alt="Logo Starbucks"
+            class="logo"
+        /></a>
+        <div class="toggle" onclick="toggleMenu()"></div>
+        <ul class="navigation">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">What's New</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </header>
+      <div class="content">
+        <div class="textBox">
+          <h2>
+            It's not just Coffee<br />
+            It's <span>Starbucks</span>
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
+            blanditiis deleniti numquam sit inventore sequi dicta perferendis,
+            atque eos cum dolor iusto architecto quod quibusdam temporibus eaque
+            ipsam minus nobis.
+          </p>
+          <a href="#">Learn More</a>
+        </div>
+
+        <div class="imgBox">
+          <img
+            src="./assets/images/coffe2.png"
+            alt="Coffee1"
+            class="starbucks"
+          />
+        </div>
+      </div>
+      <ul class="thumb">
+        <li>
+          <img
+            src="./assets/images/thumb2.png"
+            alt="Thumbnail"
+            onclick="changeThumb('coffe2');changeCircleColor('#017143')"
+          />
+        </li>
+        <li>
+          <img
+            src="./assets/images/thumb.png"
+            alt="Thumbnail"
+            onclick="changeThumb('coffe');changeCircleColor('#eb7495')"
+          />
+        </li>
+        <li>
+          <img
+            src="./assets/images/thumb3.png"
+            alt="Thumbnail"
+            onclick="changeThumb('coffe3');changeCircleColor('#d752b1')"
+          />
+        </li>
+      </ul>
+      <ul class="sci">
+        <li>
+          <a href=""
+            ><img src="./assets/images/facebook.svg" alt="Facebook"
+          /></a>
+        </li>
+        <li>
+          <a href="#"
+            ><img src="./assets/images/twitter.svg" alt="Twitter"
+          /></a>
+        </li>
+        <li>
+          <a href=""
+            ><img src="./assets/images/instagram.svg" alt="Instagram"
+          /></a>
+        </li>
+      </ul>
+    </section>
+    <!-- JavaScript Import -->
+    <script>
+      function changeThumb(img) {
+        console.log(img);
+        document.querySelector(".starbucks").src = `./assets/images/${img}.png`;
+      }
+
+      function changeCircleColor(color) {
+        document.querySelector(".circle").style.backgroundColor = color;
+        document.querySelector(".textBox h2 span").style.color = color;
+        document.querySelector(".textBox a").style.backgroundColor = color;
+      }
+
+      function toggleMenu() {
+        const menu = document.querySelector(".toggle");
+        const navigation = document.querySelector(".navigation");
+        menu.classList.toggle("active");
+        navigation.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
